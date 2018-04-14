@@ -32,6 +32,9 @@
 
 *, ::before, ::after {
   box-sizing: border-box;
+  font-smooth: always;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
