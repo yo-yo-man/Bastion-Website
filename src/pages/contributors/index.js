@@ -7,63 +7,62 @@ class ContributorsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      repositories: [],
       contributors: {}
     };
   }
 
-  async componentDidMount() {
-    try {
-      await this.fetchRepositories();
-      await this.fetchContributors();
-    }
-    catch (e) {
-      console.error(e);
-    }
+  componentDidMount() {
+    this.fetchContributors();
   }
 
-  async fetchRepositories() {
-    try {
-      let response = await axios.get('https://api.github.com/orgs/TheBastionBot/repos')
-      if (response.data && response.data.length) {
-        this.setState({
-          repositories: response.data.map(repo => repo.name)
-        });
-      }
-    }
-    catch (e) {
-      console.error(e);
-    }
-  }
-
-  async fetchContributors() {
-    try {
-      let contributors = this.state.contributors;
-
-      for (let repo of this.state.repositories) {
-        let response = await axios.get(`https://api.github.com/repos/TheBastionBot/${repo}/contributors`);
-
-        if (response.data && response.data.length) {
-          let users = response.data.filter(user => user.type === 'User');
-
-          for (let user of users) {
-            if (contributors.hasOwnProperty(user.login)) {
-              contributors[user.login] += user.contributions;
-            }
-            else {
-              contributors[user.login] = user.contributions;
-            }
+  fetchRepositories() {
+    return new Promise((resolve, reject) => {
+      axios.get('https://api.github.com/orgs/TheBastionBot/repos')
+        .then(response => {
+          if (response.data && response.data.length) {
+            resolve(response.data.map(repo => repo.name));
           }
-        }
-      }
+          reject(new Error('Unknown Error'));
+        })
+        .catch(e => {
+          reject(e);
+        });
+    });
+  }
 
-      this.setState({
-        contributors: contributors
-      });
-    }
-    catch (e) {
-      console.error(e);
-    }
+  fetchContributors() {
+    this.fetchRepositories()
+      .then(repositories => {
+        let contributors = this.state.contributors;
+
+        for (let repo of repositories) {
+          axios.get(`https://api.github.com/repos/TheBastionBot/${repo}/contributors`)
+            .then(response => {
+              if (response.data && response.data.length) {
+                let users = response.data.filter(user => user.type === 'User');
+
+                for (let user of users) {
+                  if (contributors.hasOwnProperty(user.login)) {
+                    contributors[user.login] += user.contributions;
+                  }
+                  else {
+                    contributors[user.login] = user.contributions;
+                  }
+                }
+              }
+            })
+            .catch(e => {
+              console.error(e);
+            });
+        }
+
+        this.setState({
+          contributors: contributors
+        });
+      })
+      .catch(e => {
+        console.error(e);
+      })
   }
 
   render() {
