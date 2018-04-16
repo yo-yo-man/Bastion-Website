@@ -1,0 +1,69 @@
+#contributors .header,
+#contributors .container {
+  padding: 20px;
+  min-height: 25vh;
+  margin-bottom: 40px;
+}
+
+#contributors .header {
+  text-align: center;
+}
+
+#contributors .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#contributors .container .contributor {
+  margin: 20px;
+  min-width: 190px;
+  min-height: 240px;
+  box-shadow: 0 9px 30px 0 rgba(35,39,42,.1);
+  border-radius: 8px;
+  transform: translateY(0);
+  transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+#contributors .container .contributor:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px 0 rgba(35,39,42,.1);
+}
+
+#contributors .container .contributor a {
+  display: block;
+  color: #222;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+#contributors .container .contributor a .image,
+#contributors .container .contributor a .details {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+#contributors .container .contributor a .image {
+  height: 150px;
+  width: 150px;
+}
+
+#contributors .container .contributor a .image img {
+  border-radius: 8px;
+}
+
+#contributors .container .contributor a .details {
+  margin-top: 20px;
+}
+
+#contributors .container .contributor a .details h4 {
+  font-size: 1.3em;
+}
+
+#contributors .container .contributor a .details p {
+  margin: 0;
+}
