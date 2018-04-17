@@ -27,7 +27,7 @@ class ContributorsPage extends React.Component {
       }).then(response => {
         let repos = [];
 
-        if (window.localStorage.getItem('github_repos_etag')) {
+        if (response.status === 304 && window.localStorage.getItem('github_repos_etag')) {
           repos = JSON.parse(window.localStorage.getItem('github_repos'));
         }
         else if (response.data && response.data.length) {
@@ -62,7 +62,7 @@ class ContributorsPage extends React.Component {
           }).then(response => {
             let users = [];
 
-            if (window.localStorage.getItem(`github_repo_${repo.toLowerCase()}_etag`)) {
+            if (response.status === 304 && window.localStorage.getItem(`github_repo_${repo.toLowerCase()}_etag`)) {
               users = JSON.parse(window.localStorage.getItem(`github_${repo.toLowerCase()}_contributors`));
             }
             else if (response.data && response.data.length) {
