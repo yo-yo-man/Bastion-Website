@@ -87,14 +87,14 @@ class ContributorsPage extends React.Component {
                 contributors[user.login] = user.contributions;
               }
             }
+
+            this.setState({
+              contributors: contributors
+            });
           }).catch(e => {
             console.error(e);
           });
         }
-
-        this.setState({
-          contributors: contributors
-        });
       })
       .catch(e => {
         console.error(e);
