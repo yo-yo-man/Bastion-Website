@@ -66,7 +66,12 @@ class ContributorsPage extends React.Component {
               users = JSON.parse(window.localStorage.getItem(`github_${repo.toLowerCase()}_contributors`));
             }
             else if (response.data && response.data.length) {
-              users = response.data.filter(user => user.type === 'User');
+              users = response.data.filter(user => user.type === 'User').map(user => {
+                return {
+                  login: user.login,
+                  contributions: user.contributions
+                }
+              });
 
               if (response.headers) {
                 window.localStorage.setItem(`github_repo_${repo.toLowerCase()}_etag`, response.headers.etag);
