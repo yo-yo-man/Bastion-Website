@@ -52,24 +52,39 @@ class ContributorsPage extends React.Component {
         let contributors = this.state.contributors;
 
         for (let repo of repositories) {
-          axios.get(`https://api.github.com/repos/TheBastionBot/${repo}/contributors`)
-            .then(response => {
-              if (response.data && response.data.length) {
-                let users = response.data.filter(user => user.type === 'User');
+          axios.get(`https://api.github.com/repos/TheBastionBot/${repo}/contributors`, {
+            headers: {
+              'If-None-Match': window.localStorage.getItem(`github_repo_${repo.toLowerCase()}_etag`)
+            },
+            validateStatus: function (status) {
+              return (status >= 200 && status < 300) || status === 304;
+            }
+          }).then(response => {
+            let users = [];
 
-                for (let user of users) {
-                  if (contributors.hasOwnProperty(user.login)) {
-                    contributors[user.login] += user.contributions;
-                  }
-                  else {
-                    contributors[user.login] = user.contributions;
-                  }
-                }
+            if (window.localStorage.getItem(`github_repo_${repo.toLowerCase()}_etag`)) {
+              users = JSON.parse(window.localStorage.getItem(`github_${repo.toLowerCase()}_contributors`));
+            }
+            else if (response.data && response.data.length) {
+              users = response.data.filter(user => user.type === 'User');
+
+              if (response.headers) {
+                window.localStorage.setItem(`github_repo_${repo.toLowerCase()}_etag`, response.headers.etag);
+                window.localStorage.setItem(`github_${repo.toLowerCase()}_contributors`, JSON.stringify(users));
               }
-            })
-            .catch(e => {
-              console.error(e);
-            });
+            }
+
+            for (let user of users) {
+              if (contributors.hasOwnProperty(user.login)) {
+                contributors[user.login] += user.contributions;
+              }
+              else {
+                contributors[user.login] = user.contributions;
+              }
+            }
+          }).catch(e => {
+            console.error(e);
+          });
         }
 
         this.setState({
