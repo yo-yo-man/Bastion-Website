@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ExternalLink from '../../components/ExternalLink.js';
 import './index.css';
+import blockedUsers from './blockedUsers.json';
 
 class ContributorsPage extends React.Component {
   constructor(props) {
@@ -66,7 +67,7 @@ class ContributorsPage extends React.Component {
               users = JSON.parse(window.localStorage.getItem(`github_${repo.toLowerCase()}_contributors`));
             }
             else if (response.data && response.data.length) {
-              users = response.data.filter(user => user.type === 'User').map(user => {
+              users = response.data.filter(user => user.type === 'User').filter(user => !blockedUsers.includes(user.login)).map(user => {
                 return {
                   login: user.login,
                   contributions: user.contributions
