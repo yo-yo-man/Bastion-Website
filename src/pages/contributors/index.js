@@ -17,16 +17,32 @@ class ContributorsPage extends React.Component {
 
   fetchRepositories() {
     return new Promise((resolve, reject) => {
-      axios.get('https://api.github.com/orgs/TheBastionBot/repos')
-        .then(response => {
-          if (response.data && response.data.length) {
-            resolve(response.data.map(repo => repo.name));
+      axios.get('https://api.github.com/orgs/TheBastionBot/repos', {
+        headers: {
+          'If-None-Match': window.localStorage.getItem('github_repos_etag')
+        },
+        validateStatus: function (status) {
+          return (status >= 200 && status < 300) || status === 304;
+        }
+      }).then(response => {
+        let repos = [];
+
+        if (window.localStorage.getItem('github_repos_etag')) {
+          repos = JSON.parse(window.localStorage.getItem('github_repos'));
+        }
+        else if (response.data && response.data.length) {
+          repos = response.data.map(repo => repo.name);
+
+          if (response.headers) {
+            window.localStorage.setItem('github_repos_etag', response.headers.etag);
+            window.localStorage.setItem('github_repos', JSON.stringify(repos));
           }
-          reject(new Error('Unknown Error'));
-        })
-        .catch(e => {
-          reject(e);
-        });
+        }
+
+        resolve(repos);
+      }).catch(e => {
+        reject(e);
+      });
     });
   }
 
