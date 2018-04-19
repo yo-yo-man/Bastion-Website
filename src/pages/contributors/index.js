@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import axios from 'axios';
 import ExternalLink from '../../components/ExternalLink.js';
 import './index.css';
@@ -105,6 +106,16 @@ class ContributorsPage extends React.Component {
   render() {
     return (
       <div id='contributors'>
+        <Helmet
+          meta={[
+            {
+              name: 'twitter:image',
+              property: 'og:image',
+              content: 'https://resources.bastionbot.org/og/a579602249857d28777d7aff1cbc5af3.jpg'
+            }
+          ]}
+        />
+
         <div className='header'>
           <h1>Contributors</h1>
           <p>All the users who have contributed code to The Bastion Bot Project.</p>
