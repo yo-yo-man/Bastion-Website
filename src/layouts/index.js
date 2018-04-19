@@ -21,7 +21,22 @@ class DefaultLayout extends React.Component {
     return (
       <root>
         <Helmet
+          title='The Bastion Bot - One of the best Discord Bot'
           meta={[
+            {
+              name: 'twitter:title',
+              property: 'og:title',
+              content: 'The Bastion Bot - One of the best Discord Bot'
+            },
+            {
+              name: 'description',
+              content: 'Give awesome perks to your Discord server!'
+            },
+            {
+              name: 'twitter:description',
+              property: 'og:description',
+              content: 'Give awesome perks to your Discord server!'
+            },
             {
               name: 'twitter:image',
               property: 'og:image',
