@@ -1,5 +1,9 @@
 module.exports = {
-  siteMetadata: {},
+  siteMetadata: {
+    title: 'The Bastion Bot - One of the best Discord Bot',
+    description: 'Give awesome perks to your Discord server!',
+    image: 'https://resources.bastionbot.org/og-image.jpg'
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
