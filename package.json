@@ -7,10 +7,10 @@
   "author": "Sankarsan Kampa (a.k.a. k3rnr3p1ni4c)",
   "dependencies": {
     "axios": "^0.18.0",
-    "gatsby": "^1.9.202",
-    "gatsby-link": "^1.6.37",
-    "gatsby-plugin-nprogress": "^1.0.12",
-    "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby": "^1.9.252",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-nprogress": "^1.0.14",
+    "gatsby-plugin-react-helmet": "^2.0.10",
     "react-helmet": "^5.2.0",
     "showdown": "^1.8.6"
   },
