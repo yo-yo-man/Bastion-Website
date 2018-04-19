@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import ExternalLink from '../../components/ExternalLink.js';
 import versions from './versions.json';
 import './index.css';
@@ -7,6 +8,12 @@ class AddPage extends React.Component {
   render() {
     return (
       <div id='add'>
+        <Helmet
+          meta={[
+            { name: 'twitter:image', property: 'og:image', content: 'https://resources.bastionbot.org/og/f0ba49fb37f35836715d74628626e046.jpg' }
+          ]}
+        />
+
         <div className='header'>
           <h1>Add Bastion to Discord</h1>
           <p>

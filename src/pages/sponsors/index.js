@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import ExternalLink from '../../components/ExternalLink.js';
 import sponsors from './sponsors.json';
 import './index.css';
@@ -7,6 +8,12 @@ class SponsorsPage extends React.Component {
   render() {
     return (
       <div id='sponsors'>
+        <Helmet
+          meta={[
+            { name: 'twitter:image', property: 'og:image', content: 'https://resources.bastionbot.org/og/69e3e903264da46a77deea563573b186.jpg' }
+          ]}
+        />
+
         <div className='header'>
           <h1>Sponsors</h1>
           <p>
