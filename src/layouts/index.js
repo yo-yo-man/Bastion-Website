@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SiteBanner from '../components/SiteBanner';
@@ -20,12 +19,6 @@ class DefaultLayout extends React.Component {
   render() {
     return (
       <root>
-        <Helmet
-          meta={[
-            { name: 'twitter:image', property: 'og:image', content: 'https://resources.bastionbot.org/og-image.jpg' }
-          ]}
-        />
-
         <Header />
         <main>
           { this.props.children() }
