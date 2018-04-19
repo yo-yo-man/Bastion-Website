@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import ExternalLink from '../components/ExternalLink.js';
 
@@ -29,14 +28,6 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div className='IndexPage-container'>
-        {/*
-        <Helmet
-          meta={[
-            { name: 'twitter:image', property: 'og:image', content: 'https://resources.bastionbot.org/og-image.jpg' }
-          ]}
-        />
-        */}
-
         <img
           src={ this.state.bastionLogo }
           onClick={ () => this.increment() }
