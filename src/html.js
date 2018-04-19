@@ -33,11 +33,6 @@ class HTML extends React.Component {
             }
           />
 
-          <title>The Bastion Bot - One of the best Discord Bot</title>
-          <meta
-            name='description'
-            content='Give awesome perks to your Discord server!'
-          />
           <meta
             name='keywords'
             content={
@@ -53,16 +48,6 @@ class HTML extends React.Component {
           <meta name="twitter:creator" content="@k3rn31p4nic" />
 
           <meta property='og:site_name' content='The Bastion Bot' />
-          <meta
-            name='twitter:title'
-            property='og:title'
-            content='The Bastion Bot - One of the best Discord Bot'
-          />
-          <meta
-            name='twitter:description'
-            property='og:description'
-            content='Give awesome perks to your Discord server!'
-          />
           <meta property='og:url' content='https://bastionbot.org' />
           <meta property='og:image:width' content='1000' />
           <meta property='og:image:height' content='524' />
