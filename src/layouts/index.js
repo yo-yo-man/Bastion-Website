@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SiteBanner from '../components/SiteBanner';
 import BackToTop from '../components/BackToTop';
+import { siteMetadata } from '../../gatsby-config.js';
 import './index.css';
 
 class DefaultLayout extends React.Component {
@@ -21,26 +22,26 @@ class DefaultLayout extends React.Component {
     return (
       <root>
         <Helmet
-          title='The Bastion Bot - One of the best Discord Bot'
+          title={ siteMetadata.title }
           meta={[
             {
               name: 'twitter:title',
               property: 'og:title',
-              content: 'The Bastion Bot - One of the best Discord Bot'
+              content: siteMetadata.title
             },
             {
               name: 'description',
-              content: 'Give awesome perks to your Discord server!'
+              content: siteMetadata.description
             },
             {
               name: 'twitter:description',
               property: 'og:description',
-              content: 'Give awesome perks to your Discord server!'
+              content: siteMetadata.description
             },
             {
               name: 'twitter:image',
               property: 'og:image',
-              content: 'https://resources.bastionbot.org/og-image.jpg'
+              content: siteMetadata.image
             }
           ]}
         />

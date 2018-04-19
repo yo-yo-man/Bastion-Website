@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import ExternalLink from '../components/ExternalLink.js';
+import { siteMetadata } from '../../gatsby-config.js';
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -30,26 +31,26 @@ class IndexPage extends React.Component {
     return (
       <div className='IndexPage-container'>
         <Helmet
-          title='The Bastion Bot - One of the best Discord Bot'
+          title={ siteMetadata.title }
           meta={[
             {
               name: 'twitter:title',
               property: 'og:title',
-              content: 'The Bastion Bot - One of the best Discord Bot'
+              content: siteMetadata.title
             },
             {
               name: 'description',
-              content: 'Give awesome perks to your Discord server!'
+              content: siteMetadata.description
             },
             {
               name: 'twitter:description',
               property: 'og:description',
-              content: 'Give awesome perks to your Discord server!'
+              content: siteMetadata.description
             },
             {
               name: 'twitter:image',
               property: 'og:image',
-              content: 'https://resources.bastionbot.org/og-image.jpg'
+              content: siteMetadata.image
             }
           ]}
         />
