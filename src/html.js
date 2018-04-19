@@ -67,11 +67,6 @@ class HTML extends React.Component {
           <meta property='og:image:width' content='1000' />
           <meta property='og:image:height' content='524' />
           <meta property='og:type' content='website' />
-          <meta
-            name='twitter:image'
-            property='og:image'
-            content='https://resources.bastionbot.org/og-image.jpg'
-          />
 
           <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
           <link rel='shortcut icon' href='https://bastionbot.org/favicon.ico' />
