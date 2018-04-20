@@ -1,6 +1,7 @@
 import React from 'react';
 import SiteHead from '../../components/SiteHead';
 import axios from 'axios';
+import meta from './meta.json';
 import ExternalLink from '../../components/ExternalLink.js';
 import './index.css';
 import blockedUsers from './blockedUsers.json';
@@ -107,7 +108,9 @@ class ContributorsPage extends React.Component {
     return (
       <div id='contributors'>
         <SiteHead
-          image='https://resources.bastionbot.org/og/a579602249857d28777d7aff1cbc5af3.jpg'
+          title={ meta.title }
+          description={ meta.description }
+          image={ meta.image }
         />
 
         <div className='header'>

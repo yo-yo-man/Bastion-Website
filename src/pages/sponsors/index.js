@@ -1,6 +1,7 @@
 import React from 'react';
 import SiteHead from '../../components/SiteHead';
 import ExternalLink from '../../components/ExternalLink.js';
+import meta from './meta.json';
 import sponsors from './sponsors.json';
 import './index.css';
 
@@ -9,7 +10,9 @@ class SponsorsPage extends React.Component {
     return (
       <div id='sponsors'>
         <SiteHead
-          image='https://resources.bastionbot.org/og/69e3e903264da46a77deea563573b186.jpg'
+          title={ meta.title }
+          description={ meta.description }
+          image={ meta.image }
         />
 
         <div className='header'>

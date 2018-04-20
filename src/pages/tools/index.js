@@ -1,6 +1,7 @@
 import React from 'react';
 import SiteHead from '../../components/SiteHead';
 import ExternalLink from '../../components/ExternalLink.js';
+import meta from './meta.json';
 import tools from './tools.json';
 import './index.css';
 
@@ -9,7 +10,9 @@ class ToolsPage extends React.Component {
     return (
       <div id='tools'>
         <SiteHead
-          image='https://resources.bastionbot.org/og/2b229c87895c10f385151acb0e853d2f.jpg'
+          title={ meta.title }
+          description={ meta.description }
+          image={ meta.image }
         />
 
         <div className='header'>

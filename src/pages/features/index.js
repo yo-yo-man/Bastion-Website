@@ -2,6 +2,7 @@ import React from 'react';
 import SiteHead from '../../components/SiteHead';
 import showdown from 'showdown';
 import ExternalLink from '../../components/ExternalLink.js';
+import meta from './meta.json';
 import features from './features.json';
 import './index.css';
 
@@ -12,7 +13,9 @@ class FeaturesPage extends React.Component {
     return (
       <div id='features'>
         <SiteHead
-          image='https://resources.bastionbot.org/og/42a7fd2efc8a0ff6b6eb97f601ee8b73.jpg'
+          title={ meta.title }
+          description={ meta.description }
+          image={ meta.image }
         />
 
         <div className='header'>

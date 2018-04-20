@@ -2,6 +2,7 @@ import React from 'react';
 import SiteHead from '../../components/SiteHead';
 import showdown from 'showdown';
 import ExternalLink from '../../components/ExternalLink.js';
+import meta from './meta.json';
 import faq from './faq.json';
 import './index.css';
 
@@ -23,7 +24,9 @@ class FAQPage extends React.Component {
     return (
       <div id='faq'>
         <SiteHead
-          image='https://resources.bastionbot.org/og/a5dc9c3d3634c0561ce0e5d65280bf86.jpg'
+          title={ meta.title }
+          description={ meta.description }
+          image={ meta.image }
         />
 
         <div className='header'>

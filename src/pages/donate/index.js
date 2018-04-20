@@ -1,6 +1,7 @@
 import React from 'react';
 import SiteHead from '../../components/SiteHead';
 import ExternalLink from '../../components/ExternalLink.js';
+import meta from './meta.json';
 import methods from './methods.json';
 import './index.css';
 
@@ -9,7 +10,9 @@ class DonatePage extends React.Component {
     return (
       <div id='donate'>
         <SiteHead
-          image='https://resources.bastionbot.org/og/b5e9ed9fd91ceeba4c24fbc9b27c427a.jpg'
+          title={ meta.title }
+          description={ meta.description }
+          image={ meta.image }
         />
 
         <div className='header'>
