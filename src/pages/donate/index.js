@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import SiteHead from '../../components/SiteHead';
 import ExternalLink from '../../components/ExternalLink.js';
 import methods from './methods.json';
 import './index.css';
@@ -8,14 +8,8 @@ class DonatePage extends React.Component {
   render() {
     return (
       <div id='donate'>
-        <Helmet
-          meta={[
-            {
-              name: 'twitter:image',
-              property: 'og:image',
-              content: 'https://resources.bastionbot.org/og/b5e9ed9fd91ceeba4c24fbc9b27c427a.jpg'
-            }
-          ]}
+        <SiteHead
+          image='https://resources.bastionbot.org/og/b5e9ed9fd91ceeba4c24fbc9b27c427a.jpg'
         />
 
         <div className='header'>

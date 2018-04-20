@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import SiteHead from '../../components/SiteHead';
 import ExternalLink from '../../components/ExternalLink.js';
 import versions from './versions.json';
 import './index.css';
@@ -8,14 +8,8 @@ class AddPage extends React.Component {
   render() {
     return (
       <div id='add'>
-        <Helmet
-          meta={[
-            {
-              name: 'twitter:image',
-              property: 'og:image',
-              content: 'https://resources.bastionbot.org/og/f0ba49fb37f35836715d74628626e046.jpg'
-            }
-          ]}
+        <SiteHead
+          image='https://resources.bastionbot.org/og/f0ba49fb37f35836715d74628626e046.jpg'
         />
 
         <div className='header'>

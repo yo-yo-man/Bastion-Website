@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import SiteHead from '../components/SiteHead';
 import Link from 'gatsby-link';
 import ExternalLink from '../components/ExternalLink.js';
 import { siteMetadata } from '../../gatsby-config.js';
@@ -30,30 +30,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div className='IndexPage-container'>
-        <Helmet
-          title={ siteMetadata.title }
-          meta={[
-            {
-              name: 'twitter:title',
-              property: 'og:title',
-              content: siteMetadata.title
-            },
-            {
-              name: 'description',
-              content: siteMetadata.description
-            },
-            {
-              name: 'twitter:description',
-              property: 'og:description',
-              content: siteMetadata.description
-            },
-            {
-              name: 'twitter:image',
-              property: 'og:image',
-              content: siteMetadata.image
-            }
-          ]}
-        />
+        <SiteHead />
 
         <img
           src={ this.state.bastionLogo }

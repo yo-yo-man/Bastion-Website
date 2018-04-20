@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import SiteHead from '../../components/SiteHead';
 import ExternalLink from '../../components/ExternalLink.js';
 import tools from './tools.json';
 import './index.css';
@@ -8,14 +8,8 @@ class ToolsPage extends React.Component {
   render() {
     return (
       <div id='tools'>
-        <Helmet
-          meta={[
-            {
-              name: 'twitter:image',
-              property: 'og:image',
-              content: 'https://resources.bastionbot.org/og/2b229c87895c10f385151acb0e853d2f.jpg'
-            }
-          ]}
+        <SiteHead
+          image='https://resources.bastionbot.org/og/2b229c87895c10f385151acb0e853d2f.jpg'
         />
 
         <div className='header'>

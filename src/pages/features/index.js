@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import SiteHead from '../../components/SiteHead';
 import showdown from 'showdown';
 import ExternalLink from '../../components/ExternalLink.js';
 import features from './features.json';
@@ -11,14 +11,8 @@ class FeaturesPage extends React.Component {
   render() {
     return (
       <div id='features'>
-        <Helmet
-          meta={[
-            {
-              name: 'twitter:image',
-              property: 'og:image',
-              content: 'https://resources.bastionbot.org/og/42a7fd2efc8a0ff6b6eb97f601ee8b73.jpg'
-            }
-          ]}
+        <SiteHead
+          image='https://resources.bastionbot.org/og/42a7fd2efc8a0ff6b6eb97f601ee8b73.jpg'
         />
 
         <div className='header'>

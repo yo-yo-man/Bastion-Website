@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import SiteHead from '../../components/SiteHead';
 import Link from 'gatsby-link';
 import showdown from 'showdown';
 import axios from 'axios';
@@ -60,14 +60,8 @@ class CommandsPage extends React.Component {
   render() {
     return (
       <div id='commands'>
-        <Helmet
-          meta={[
-            {
-              name: 'twitter:image',
-              property: 'og:image',
-              content: 'https://resources.bastionbot.org/og/6dd19a650f52442ba441635325d952f6.jpg'
-            }
-          ]}
+        <SiteHead
+          image='https://resources.bastionbot.org/og/6dd19a650f52442ba441635325d952f6.jpg'
         />
 
         <div className='header'>
