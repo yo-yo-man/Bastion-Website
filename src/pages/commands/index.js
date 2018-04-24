@@ -70,7 +70,8 @@ class CommandsPage extends React.Component {
         <div className='header'>
           <h1>Bastion Commands</h1>
           <p>
-            Check out the commands list of Bastion that you can use with it.
+            Check out the commands list of Bastion that you can use with it.<br />
+            The default prefix of Bastion is <code>#!</code>
           </p>
           <div>
             <input
