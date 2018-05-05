@@ -1,6 +1,5 @@
 import React from 'react';
 import SiteHead from '../../components/SiteHead';
-import ExternalLink from '../../components/ExternalLink.js';
 import meta from './meta.json';
 import components from './components.json';
 import './index.css';
@@ -12,7 +11,6 @@ class BrandingPage extends React.Component {
         <SiteHead
           title={ meta.title }
           description={ meta.description }
-          image={ meta.image }
         />
 
         <div className='header'>
