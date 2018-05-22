@@ -59,6 +59,9 @@ class Footer extends React.Component {
               <ExternalLink to='https://twitter.com/TheBastionBot'>
                 Twitter
               </ExternalLink>
+              <ExternalLink to='https://reddit.com/r/TheBastionBot'>
+                Reddit
+              </ExternalLink>
             </div>
             <div className='Footer-card'>
               <h3>Donate</h3>
