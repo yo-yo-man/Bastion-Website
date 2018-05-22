@@ -16,13 +16,13 @@ class CommandsPage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://raw.githubusercontent.com/TheBastionBot/Bastion/stable/locales/en_us/command.json')
+    axios.get('https://raw.githubusercontent.com/TheBastionBot/Bastion/stable/data/commands.json')
       .then(res => {
         let commands = [];
         for (let command of Object.keys(res.data)) {
           commands.push({
             name: command,
-            module: res.data[command].module.replace(/_/, ' '),
+            module: res.data[command].module,
             description: res.data[command].description
           });
         }
