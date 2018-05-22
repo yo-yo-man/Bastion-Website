@@ -32,6 +32,7 @@ class Footer extends React.Component {
               </ExternalLink>
               <Link to='/tools'>Tools</Link>
               <Link to='/faq'>FAQ</Link>
+              <Link to='/branding'>Branding</Link>
               <ExternalLink to='https://status.bastionbot.org'>
                 Status
               </ExternalLink>
