@@ -3,6 +3,7 @@ import SiteHead from '../../components/SiteHead';
 import axios from 'axios';
 import meta from './meta.json';
 import ExternalLink from '../../components/ExternalLink.js';
+import Loader from '../../components/Loader';
 import './index.css';
 import blockedUsers from './blockedUsers.json';
 
@@ -143,7 +144,7 @@ class ContributorsPage extends React.Component {
                 );
               })
             :
-              <div>Fetching contributors...</div>
+              <Loader />
           }
         </div>
       </div>
