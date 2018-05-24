@@ -5,9 +5,29 @@ import showdown from 'showdown';
 import axios from 'axios';
 import meta from './meta.json';
 import ExternalLink from '../../components/ExternalLink.js';
+import { TextPlaceholder } from '../../components/Placeholder';
 import './index.css';
 
 const converter = new showdown.Converter();
+
+
+class CommandsPlaceholder extends React.Component {
+  render() {
+    return(
+      <tr>
+        <td>
+          <TextPlaceholder minOffset='70' maxOffset='25' />
+          <TextPlaceholder minOffset='70' maxOffset='25' />
+        </td>
+        <td>
+          <TextPlaceholder minOffset='15' maxOffset='25' />
+          <TextPlaceholder minOffset='50' maxOffset='75' />
+        </td>
+      </tr>
+    );
+  }
+}
+
 
 class CommandsPage extends React.Component {
   constructor(props) {
@@ -121,14 +141,7 @@ class CommandsPage extends React.Component {
                       </tr>
                     );
                   })
-                : <tr className='command'>
-                    <td>
-                      <div>Loading...</div>
-                    </td>
-                    <td>
-                      <div>Loading...</div>
-                    </td>
-                  </tr>
+                : <CommandsPlaceholder />
               }
             </tbody>
           </table>
@@ -137,5 +150,6 @@ class CommandsPage extends React.Component {
     );
   }
 }
+
 
 export default CommandsPage;
