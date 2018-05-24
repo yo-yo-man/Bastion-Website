@@ -1,0 +1,23 @@
+.placeholder.text {
+  display: block;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background: rgba(250, 250, 250, .25);
+  color: transparent;
+
+  transform: translateZ(0);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+    opacity: .25;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: .25;
+  }
+}
