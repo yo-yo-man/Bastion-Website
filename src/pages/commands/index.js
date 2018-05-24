@@ -84,49 +84,54 @@ class CommandsPage extends React.Component {
         </div>
 
         <div className='container'>
-          {
-            this.state.commands
-            ? <table id='commandsTable' cellSpacing='0' cellPadding='0'>
-                <thead>
-                  <tr>
-                    <td style={{ width: '30%' }}>
-                      Command
+        <table id='commandsTable' cellSpacing='0' cellPadding='0' width='100%'>
+            <thead>
+              <tr>
+                <td style={{ width: '30%' }}>
+                  Command
+                </td>
+                <td style={{ width: '70%' }}>
+                  Description
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.state.commands
+                ? this.state.commands.map((command, i) => {
+                    return (
+                      <tr className='command' key={ i }>
+                        <td>
+                          <div className='commandName'>
+                            <code>{ command.name }</code>
+                          </div>
+                          <div
+                            className='commandModule'
+                            title={ `This command belongs to the ${command.module} module` }
+                          >
+                            <code>{ command.module }</code>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            className='commandDescription'
+                            dangerouslySetInnerHTML={{ __html: converter.makeHtml(command.description) }}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })
+                : <tr className='command'>
+                    <td>
+                      <div>Loading...</div>
                     </td>
-                    <td style={{ width: '70%' }}>
-                      Description
+                    <td>
+                      <div>Loading...</div>
                     </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {
-                    this.state.commands.map((command, i) => {
-                      return (
-                        <tr className='command' key={ i }>
-                          <td>
-                            <div className='commandName'>
-                              <code>{ command.name }</code>
-                            </div>
-                            <div
-                              className='commandModule'
-                              title={ `This command belongs to the ${command.module} module` }
-                            >
-                              <code>{ command.module }</code>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              className='commandDescription'
-                              dangerouslySetInnerHTML={{ __html: converter.makeHtml(command.description) }}
-                            />
-                          </td>
-                        </tr>
-                      );
-                    })
-                  }
-                </tbody>
-              </table>
-            : <div>Loading Commands...</div>
-          }
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     );
