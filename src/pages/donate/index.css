@@ -25,6 +25,9 @@
   transform: translateY(-10px);
   box-shadow: 0 12px 30px 0 rgba(35,39,42,.1);
 }
+#donate .container .method:active {
+  transform: scale3d(0.95, 0.95, 0.95);
+}
 
 #donate .container .method a {
   display: block;
