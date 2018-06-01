@@ -6,6 +6,7 @@ import ExternalLink from '../../components/ExternalLink.js';
 import Loader from '../../components/Loader';
 import './index.css';
 import blockedUsers from './blockedUsers.json';
+import members from './members.json';
 
 class ContributorsPage extends React.Component {
   constructor(props) {
@@ -129,7 +130,7 @@ class ContributorsPage extends React.Component {
                     <ExternalLink to={ `https://github.com/${user}` }>
                       <div className='image'>
                         <img
-                          src={ `https://github.com/${user}.png?v=${Math.random()}` }
+                          src={ Object.keys(members).includes(user) ? members[user].avatar : `https://github.com/${user}.png?v=${Math.random()}` }
                           alt='User Avatar'
                           height='150'
                           width='150'
