@@ -6,18 +6,31 @@ import ExternalLink from '../../components/ExternalLink.js';
 import Loader from '../../components/Loader';
 import './index.css';
 import blockedUsers from './blockedUsers.json';
-import members from './members.json';
 
 class ContributorsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      members: {},
       contributors: {}
     };
   }
 
   componentDidMount() {
+    this.fetchMembers();
     this.fetchContributors();
+  }
+
+  fetchMembers() {
+    axios.get('https://raw.githubusercontent.com/TheBastionBot/metadata/master/meta/members.json')
+      .then(res => {
+        this.setState({
+          members: res.data
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   fetchRepositories() {
@@ -130,7 +143,11 @@ class ContributorsPage extends React.Component {
                     <ExternalLink to={ `https://github.com/${user}` }>
                       <div className='image'>
                         <img
-                          src={ Object.keys(members).includes(user) ? members[user].avatar : `https://github.com/${user}.png?v=${Math.random()}` }
+                          src={
+                            Object.keys(this.state.members).includes(user) && this.state.members[user].avatar
+                            ? this.state.members[user].avatar
+                            : `https://github.com/${user}.png?v=${Math.random()}`
+                          }
                           alt='User Avatar'
                           height='150'
                           width='150'
