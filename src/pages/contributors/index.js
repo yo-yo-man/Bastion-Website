@@ -140,7 +140,7 @@ class ContributorsPage extends React.Component {
               Object.keys(this.state.contributors).map((user, i) => {
                 return (
                   <div className='contributor' key={ i }>
-                    <ExternalLink to={ `https://github.com/${user}` }>
+                    <ExternalLink to={ Object.keys(this.state.members).includes(user) ? `https://github.com/${user}` : '#' }>
                       <div className='image'>
                         <img
                           src={
