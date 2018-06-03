@@ -37,6 +37,7 @@ class AddPage extends React.Component {
                 <div className='version' key={ i }>
                   <ExternalLink to={ version.url }>
                     <div className='details'>
+                      <img src={ version.image } height='128' width='128' alt='' />
                       <h4>{ version.title }</h4>
                       <p>{ version.description }</p>
                     </div>
