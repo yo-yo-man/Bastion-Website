@@ -37,6 +37,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  cursor: url('../assets/pen.png'), auto;
+}
+
 html,
 body {
   margin: 0;
@@ -69,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #DFDFDF;
   text-decoration: none;
+  cursor: url('../assets/pointer.png'), auto;
   transition: color .3s cubic-bezier(.175, .885, .32, 1.275);
 }
 a:hover {
@@ -83,7 +88,7 @@ button {
   background-color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
-  cursor: pointer;
+  cursor: url('../assets/pointer.png'), auto;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
   transition: box-shadow .3s cubic-bezier(.175, .885, .32, 1.275), transform .3s cubic-bezier(.175, .885, .32, 1.275);
 }
@@ -137,6 +142,10 @@ code {
   padding: 3px 5px;
   border-radius: 3px;
   background-color: black;
+}
+
+input {
+  cursor: url('../assets/pen.png'), auto;
 }
 
 .dropdown::after {
