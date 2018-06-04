@@ -30,6 +30,9 @@
   transform: translateY(-10px);
   box-shadow: 0 12px 30px 0 rgba(35,39,42,.1);
 }
+#add .container .version:hover > a .details img {
+  filter: none;
+}
 #add .container .version:active {
   transform: scale3d(0.95, 0.95, 0.95);
 }
@@ -42,6 +45,11 @@
   padding: 20px;
   height: 100%;
   width: 100%;
+}
+
+#add .container .version a .details img {
+  transition: filter .2s ease;
+  filter: saturate(0%) brightness(10%);
 }
 
 #add .container .version a .details h4 {
