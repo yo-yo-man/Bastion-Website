@@ -164,6 +164,7 @@ code {
 }
 
 input {
+  font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   cursor: url('../assets/pen.png'), auto;
 }
 
