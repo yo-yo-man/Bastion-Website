@@ -2,20 +2,38 @@
  * Fonts
  */
 @font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans Bold'), local('OpenSans-Bold'),
-    url('../assets/fonts/OpenSans-Bold.woff2') format('woff2'),
-    url('../assets/fonts/OpenSans-Bold.woff') format('woff');
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'),
+    url('../assets/fonts/SFProDisplay-Regular.woff2') format('woff2'),
+    url('../assets/fonts/SFProDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+    url('../assets/fonts/SFProDisplay-Medium.woff2') format('woff2'),
+    url('../assets/fonts/SFProDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
+    url('../assets/fonts/SFProDisplay-Bold.woff2') format('woff2'),
+    url('../assets/fonts/SFProDisplay-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
-    url('../assets/fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('../assets/fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: normal;
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Light'), local('SFProDisplay-Light'),
+    url('../assets/fonts/SFProDisplay-Light.woff2') format('woff2'),
+    url('../assets/fonts/SFProDisplay-Light.woff') format('woff');
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -48,10 +66,9 @@ body {
 
 html {
   overflow-x: none;
-  font-family: sans-serif;
   background-color: #070a0c;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16.5px;
 }
 
 body {
@@ -67,6 +84,7 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
   margin: 0;
 }
 
@@ -87,7 +105,7 @@ button {
   border: none;
   border-radius: 3px;
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1em;
   cursor: url('../assets/pointer.png'), auto;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
@@ -179,7 +197,7 @@ main .IndexPage-container img {
 
 main .IndexPage-container p {
   margin: 5px 0 20px 0;
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #AAA;
 }
 
