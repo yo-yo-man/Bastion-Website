@@ -38,7 +38,7 @@ class IndexPage extends React.Component {
           width='1024'
           height='176'
         />
-        <p>Give awesome perks to your Discord server!</p>
+        <p>Automate all the things!</p>
         <Link to='/add'>
           <button>Add Bastion to Discord</button>
         </Link>
