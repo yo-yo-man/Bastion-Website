@@ -69,6 +69,7 @@ class MainNav extends React.Component {
                 <NavLink name='Sponsors' to='/sponsors' />
                 <NavLink name='Contributors' to='/contributors' />
                 <NavLink name='Branding' to='/branding' />
+                <NavLink name='Testimonials' to='/testimonials' />
                 <NavExLink name='Developers' to='https://dev.bastionbot.org' />
                 <NavExLink name='Translators' to='https://i18n.bastionbot.org' />
                 <NavExLink name='Status' to='https://status.bastionbot.org' />
