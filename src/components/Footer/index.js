@@ -41,6 +41,7 @@ class Footer extends React.Component {
               <h3>Supporters</h3>
               <Link to='/sponsors'>Sponsors</Link>
               <Link to='/contributors'>Contributors</Link>
+              <Link to='/testimonials'>Testimonials</Link>
               <ExternalLink to='https://dev.bastionbot.org'>
                 Developers
               </ExternalLink>
