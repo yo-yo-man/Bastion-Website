@@ -156,6 +156,7 @@ class ContributorsPage extends React.Component {
                       <div className='details'>
                         <h4>{ user }</h4>
                         <p>{ this.state.contributors[user] } Contributions</p>
+                        { Object.keys(this.state.members).includes(user) ? <span className='member'>Member</span> : '' }
                       </div>
                     </ExternalLink>
                   </div>

@@ -67,6 +67,14 @@
   font-size: 1.3em;
 }
 
+#contributors .container .contributor a .details span.member {
+  padding: 0 2px;
+  background-color: #62D9FB;
+  border: 1px solid #40C4FB;
+  border-radius: 3px;
+  font-size: .8em;
+}
+
 #contributors .container .contributor a .details p {
   margin: 0;
   font-size: .9em;
