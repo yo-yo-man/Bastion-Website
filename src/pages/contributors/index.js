@@ -130,7 +130,12 @@ class ContributorsPage extends React.Component {
 
         <div className='header'>
           <h1>Contributors</h1>
-          <p>All the users who have contributed code to The Bastion Bot Project.</p>
+          <p>
+            All the users who have contributed code to The Bastion Bot Project.
+            <br />
+            Users who frequently contribute to the project will be invited to
+            be a member of the GitHub organization.
+          </p>
         </div>
 
         <div className='container'>
