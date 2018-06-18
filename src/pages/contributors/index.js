@@ -155,7 +155,7 @@ class ContributorsPage extends React.Component {
                       </div>
                       <div className='details'>
                         <h4>{ user }</h4>
-                        <p><strong>{ this.state.contributors[user] }</strong> Contributions</p>
+                        <p>{ this.state.contributors[user] } Contributions</p>
                       </div>
                     </ExternalLink>
                   </div>
